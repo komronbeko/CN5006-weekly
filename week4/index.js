@@ -15,6 +15,7 @@ app.get("/about", function (req, res) {
 
 app.get("/users/:userid/books/:bookId", function (req, res) {
   res.send(req.params);
+  
 });
 
 app.get("/getstudents", function (req, res) {
@@ -73,7 +74,7 @@ app.get("/studentinfo", (req, res) => {
 });
 
 app.post("/submit-data", function (req, res) {
-  const { firstName, lastName, myAge, gender, Qual } = req.body;
+  const { firstName, lastName, myAge, gender, qual } = req.body;
 
   res.send({
     status: true,
@@ -82,7 +83,7 @@ app.post("/submit-data", function (req, res) {
       name: `Name: ${firstName} ${lastName}`,
       age: `Age: ${myAge}`,
       gender: `Gender: ${gender}`,
-      qual: `Qualification: ${Qual}`,
+      qual: `Qualification: ${qual}`,
     },
   });
 });
